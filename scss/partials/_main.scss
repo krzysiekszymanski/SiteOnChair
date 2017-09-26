@@ -1,0 +1,161 @@
+/*main conttent */
+
+.baner {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+50,e1e1e1+69,f6f6f6+100 */
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #f1f1f1 50%, #e1e1e1 69%, #f6f6f6 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #f1f1f1 50%, #e1e1e1 69%, #f6f6f6 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%, #f1f1f1 50%, #e1e1e1 69%, #f6f6f6 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
+  /* IE6-9 */
+  padding: 140px;
+  .col {
+    width: 40%;
+    min-height: 200px;
+    text-align: center;
+  }
+  .arrow {
+    width: 10%;
+    min-height: 200px;
+  }
+  span {
+    color: #00ffcc;
+    font-size: 4.2rem;
+    font-weight: 700;
+    margin: 100px 0;
+  }
+  h1 {
+    font-size: 4.2rem;
+    font-weight: 700;
+  }
+  p {
+    text-align: center;
+    clear: both;
+  }
+  a {
+    margin: 20px 0;
+    background: #00ffcc;
+    padding: 20px 40px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+  }
+}
+
+/* Products */
+
+.products {
+  padding: 20px 0;
+  .col {
+    width: 30%;
+    min-height: 250px;
+    position: relative;
+    &:first-of-type {
+      background: url("../images/box1_img.jpg") no-repeat (center / cover);
+    }
+    &:nth-of-type(2) {
+      background: url("../images/box2_img.jpg") no-repeat (center / cover);
+      margin: 0 2%;
+    }
+    &:last-of-type {
+      background: white;
+    }
+  }
+  .title {
+    background: white;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    bottom: 10px;
+  }
+}
+
+h2, h3 {
+  border-bottom: 5px solid $main-color;
+  min-width: 40px;
+  display: inline-block;
+  min-width: 170px;
+}
+
+.products .col p {
+  margin: 10px 0;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+/*List of products*/
+
+.productsList {
+  padding: 20px 0;
+  background: #efefef;
+  .col {
+    width: 30%;
+    min-height: 450px;
+    position: relative;
+    border: 1px solid black;
+    margin: 80px 0;
+    text-align: center;
+    background: white;
+    &::before {
+      left: calc(50% - 35px);
+      top: -50px;
+      content: "";
+      width: 50px;
+      height: 50px;
+      background: #c4c4c4;
+      z-index: 2;
+      border: 10px solid white;
+      position: absolute;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px black;
+    }
+    &:nth-of-type(2) {
+      margin: 80px 5%;
+    }
+    header {
+      background: white;
+      color: $main-color;
+      text-align: center;
+      font-size: 1.8rem;
+      margin: 30px 0;
+    }
+    .circle {
+      padding: 17px;
+      border: 1px solid;
+      border-radius: 50%;
+      margin: 0px 118px;
+      height: 90px;
+      text-align: center;
+    }
+  }
+  .text {
+    margin: 20px 0;
+    p {
+      &:first-of-type {
+        padding: 10px;
+        background: #c4c4c4;
+      }
+      &:nth-of-type(2) {
+        padding: 10px;
+        background: #e0e0e0;
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    background: $main-color;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    margin-top: 110px;
+    width: 120px;
+  }
+}

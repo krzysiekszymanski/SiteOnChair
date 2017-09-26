@@ -1,0 +1,61 @@
+/* Form*/
+
+.form {
+  padding: 20px;
+  .contact {
+    width: 65%;
+    padding: 30px 0;
+    input, textarea {
+      width: 90%;
+      margin: 10px 0;
+    }
+    input {
+      height: 60px;
+    }
+    textarea {
+      min-height: 160px;
+      resize: none;
+    }
+    input::placeholder {
+      padding: 30px 10px;
+      font-size: 30px;
+      opacity: 0.5;
+      line-height: 30px;
+    }
+    textarea::placeholder {
+      padding: 5px 10px;
+      font-size: 30px;
+      opacity: 0.5;
+      line-height: 30px;
+    }
+  }
+  .col img {
+    margin: 20px 0;
+  }
+  .chair {
+    input {
+      margin-right: 10px;
+    }
+    label {
+      display: -webkit-box;
+    }
+    p {
+      opacity: 0.5;
+      font-size: 1.4rem;
+      width: 250px;
+    }
+    a {
+      padding: 10px 90px;
+      display: inline-block;
+      border-radius: 10px;
+      color: white;
+      text-align: center;
+      background: #00ffcc;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 2.4rem;
+      margin: 10px 0;
+    }
+  }
+}

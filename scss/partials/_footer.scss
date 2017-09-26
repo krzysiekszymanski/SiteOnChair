@@ -1,0 +1,22 @@
+/*footer - stopka*/
+
+footer {
+  .col {
+    width: 50%;
+    display: inline-flex;
+  }
+  p {
+    opacity: 0.5;
+  }
+  :last-of-type p {
+    font-weight: 600;
+    float: right;
+    margin-left: 100px;
+  }
+  ul {
+    margin-left: 100px;
+    li {
+      display: inline-block;
+    }
+  }
+}
