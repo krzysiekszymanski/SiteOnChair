@@ -1,0 +1,319 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container{
+    display: block;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col{
+    float: left;
+}
+/* Header*/
+header {
+  background: black;
+  color: white;
+ }
+header nav .col {
+  width: 50%;
+  padding: 20px 0;
+}
+ nav ul li{
+  display: inline-block;
+  float: right;
+  margin:  0 25px;
+  position: relative;
+  padding: 5px;
+
+}
+nav ul li:hover .dropdown {
+  opacity: 1;
+  transition: 1s;
+}
+
+nav .dropdown {
+  background: black;
+  position: absolute;
+  padding: 10px;
+  top: 60px;
+  opacity: 0;
+  z-index: 2;
+}
+nav .dropdown li {
+  float: left;
+}
+
+nav .dropdown::before {
+  left: calc(50% - 10px);
+  top: -10px;
+  content: "";
+  transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+  background: black;
+  z-index: 3;
+  position: absolute;
+  }
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+}
+nav p {
+  font-weight: 700;
+}
+ nav span {
+   color:#00ffcc;
+   font-weight: 700;
+ }
+
+/*main conttent */
+.baner {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+50,e1e1e1+69,f6f6f6+100 */
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #f1f1f1 50%, #e1e1e1 69%, #f6f6f6 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#f1f1f1 50%,#e1e1e1 69%,#f6f6f6 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%,#f1f1f1 50%,#e1e1e1 69%,#f6f6f6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
+padding: 140px;
+}
+.baner .col {
+  width: 40%;
+  min-height: 200px;
+  text-align: center;
+}
+.baner .arrow{
+  width: 10%;
+  min-height: 200px;
+}
+.baner span{
+  color: #00ffcc;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 100px 0;
+}
+.baner h1 {
+  font-size: 42px;
+  font-weight: 700;
+}
+.baner p {
+  text-align: center;
+  clear: both;
+}
+.baner a {
+  margin: 20px 0;
+  background: #00ffcc;
+  padding: 20px 40px;
+  text-decoration: none;
+  color:white;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+}
+/* Products */
+.products {
+  padding: 20px 0;
+}
+.products .col {
+  width: 30%;
+  min-height: 250px;
+  position: relative;
+}
+.products .col:first-of-type {
+  background: url("../images/box1_img.jpg") no-repeat center/cover;
+}
+.products .col:nth-of-type(2) {
+  background: url("../images/box2_img.jpg") no-repeat center/cover;
+  margin: 0 2%;
+}
+.products .col:last-of-type {
+  background:white;
+}
+.products .title {
+  background: white;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+  padding: 10px;
+  bottom: 10px;
+}
+ h2, h3 {
+  border-bottom: 5px solid #00ffcc;
+  min-width: 40px;
+  display: inline-block;
+  min-width: 170px;
+}
+h3 {
+
+}
+.products .col p {
+  margin: 10px 0;
+  font-weight: 300;
+  font-size: 14px;
+}
+/*List of products*/
+.productsList {
+  padding: 20px 0;
+  background: #efefef;
+
+}
+.productsList .col {
+  width: 30%;
+  min-height: 450px;
+  position: relative;
+  border: 1px solid black;
+  margin: 80px 0;
+  text-align: center;
+  background: white;
+}
+.productsList .col::before {
+  left: calc(50% - 35px);
+  top: -50px;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background: #c4c4c4;
+  z-index: 2;
+  border: 10px solid white;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px black;
+  }
+
+.productsList .col:nth-of-type(2) {
+  margin: 80px 5%;
+}
+.productsList .col header{
+  background: white;
+  color: #00ffcc;
+  text-align: center;
+  font-size: 18px;
+  margin: 30px 0;
+}
+.productsList .col .circle{
+  padding: 17px;
+  border: 1px solid;
+  border-radius: 50%;
+  margin: 0px 118px;
+  height: 90px;
+  text-align: center;
+}
+
+.productsList .text {
+  margin: 20px 0;
+}
+.productsList .text p:first-of-type {
+  padding: 10px;
+  background: #c4c4c4;
+}
+.productsList .text p:nth-of-type(2) {
+  padding: 10px;
+  background: #e0e0e0;
+}
+.productsList a {
+  text-decoration: none;
+  background: #00ffcc;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  margin-top: 110px;
+  width: 120px;
+}
+/* Form*/
+.form {
+padding: 20px;
+}
+.form .contact {
+  width: 65%;
+  padding: 30px 0;
+}
+
+.form .contact input,
+ .form .contact textarea{
+  width: 90%;
+  margin: 10px 0;
+}
+.form .contact input {
+  height: 60px;
+}
+.form .contact textarea {
+  min-height: 160px;
+  resize: none;
+}
+.form .contact input::placeholder {
+  padding: 30px 10px;
+  font-size: 30px;
+  opacity: 0.5;
+  line-height: 30px;
+}
+.form .contact textarea::placeholder {
+  padding: 5px 10px;
+  font-size: 30px;
+  opacity: 0.5;
+  line-height: 30px;
+}
+
+.form .col img {
+  margin: 20px 0;
+}
+
+.form .chair input {
+  margin-right: 10px;
+}
+
+.form .chair label {
+  display: -webkit-box;
+}
+
+.form .chair p {
+  opacity: 0.5;
+  font-size: 14px;
+  width: 250px;
+}
+.form .chair a {
+  padding: 10px 90px;
+  display: inline-block;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  background:#00ffcc;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+/*footer - stopka*/
+footer .col {
+  width: 50%;
+  display: inline-flex;
+}
+footer p {
+  opacity: 0.5;
+}
+footer :last-of-type p {
+  font-weight: 600;
+  float: right;
+  margin-left: 100px;
+}
+footer ul {
+  margin-left: 100px;
+}
+footer ul li {
+  display: inline-block;
+}
