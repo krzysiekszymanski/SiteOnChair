@@ -12,44 +12,42 @@
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
   /* IE6-9 */
-  padding: 140px;
-  .col {
-    width: 40%;
-    min-height: 200px;
-    text-align: center;
-  }
-  .arrow {
-    width: 10%;
-    min-height: 200px;
-  }
-  span {
-    color: #00ffcc;
-    font-size: 4.2rem;
-    font-weight: 700;
-    margin: 100px 0;
-  }
-  h1 {
-    font-size: 4.2rem;
-    font-weight: 700;
-  }
-  p {
-    text-align: center;
-    clear: both;
-  }
-  a {
-    margin: 20px 0;
-    background: #00ffcc;
-    padding: 20px 40px;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    display: inline-block;
-    border-radius: 10px;
+  .baner_content {
+    height: 80vh;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+      .col {
+        width: 40%;
+        text-align: center;
+      }
+      .arrow {
+        width: 10%;
+        color: $main-color;
+        font-size: 7.2rem;
+        font-weight: 500;
+      }
+      h1 {
+        font-size: 4.2rem;
+        font-weight: 700;
+        span {
+          color: $main-color;
+          font-size: 4.2rem;
+          font-weight: 700;
+        }
+      }
+      p {
+        font-size: 1.8rem;
+        text-align: center;
+        clear: both;
+      }
+      a {
+        @include btnPrimary($main-color, white)
+      }
   }
 }
 
 /* Products */
-
 .products {
   padding: 20px 0;
   .col {
@@ -57,10 +55,10 @@
     min-height: 250px;
     position: relative;
     &:first-of-type {
-      background: url("../images/box1_img.jpg") no-repeat (center / cover);
+      background: url("./images/box1_img.jpg") no-repeat (center / cover);
     }
     &:nth-of-type(2) {
-      background: url("../images/box2_img.jpg") no-repeat (center / cover);
+      background: url("./images/box2_img.jpg") no-repeat (center / cover);
       margin: 0 2%;
     }
     &:last-of-type {
