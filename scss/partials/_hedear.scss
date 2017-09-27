@@ -1,57 +1,75 @@
 header {
   background: black;
   color: white;
-  nav .col {
-    width: 50%;
-    padding: 20px 0;
-  }
-}
+  padding: 10px 0;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul{
+      display: none;
+      li {
+        display: inline-block;
+        position: relative;
+        padding: 5px;
+        margin: 0 10px;
+        font-size: 2.3rem;
+        a {
+          text-decoration: none;
+          font-weight: 700;
+          color: white;
+          text-transform: uppercase;
+        }
+        &:hover .dropdown {
+          opacity: 1;
+          transition: 1s;
+        }
+      }
+    }
 
-nav {
-  ul li {
-    display: inline-block;
-    float: right;
-    margin: 0 25px;
-    position: relative;
-    padding: 5px;
-    &:hover .dropdown {
-      opacity: 1;
-      transition: 1s;
-    }
-  }
-  .dropdown {
-    background: black;
-    position: absolute;
-    padding: 10px;
-    top: 60px;
-    opacity: 0;
-    z-index: 2;
-    li {
-      float: left;
-    }
-    &::before {
-      left: calc(50% - 10px);
-      top: -10px;
-      content: "";
-      transform: rotate(45deg);
-      width: 20px;
-      height: 20px;
+    .dropdown {
+      left: -20px;
       background: black;
-      z-index: 3;
       position: absolute;
+      padding: 10px;
+      top: 60px;
+      opacity: 0;
+      z-index: 2;
+      li {
+        float: left;
+        font-size: 1.2rem;
+      }
+      &::before {
+        display: block;
+        left: calc(50% - 10px);
+        top: -10px;
+        content: "";
+        transform: rotate(45deg);
+        width: 20px;
+        height: 20px;
+        background: black;
+        z-index: 3;
+        position: absolute;
+      }
+    }
+
+    p {
+      margin: 0 auto;
+      font-size: 2.3rem;
+      font-weight: 700;
+      span {
+        font-size: 2.3rem;
+        color: $main-color;
+        font-weight: 700;
+      }
     }
   }
-  a {
-    text-decoration: none;
-    font-weight: 500;
-    color: white;
-    text-transform: uppercase;
+
+  @media only screen and (min-width:600px) {
+  nav {
+    ul {
+      display: block;
+    }
   }
-  p {
-    font-weight: 700;
   }
-  span {
-    color: $main-color;
-    font-weight: 700;
   }
-}
