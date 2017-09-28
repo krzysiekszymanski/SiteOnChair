@@ -152,7 +152,6 @@
         border-radius: 50%;
         box-shadow: 0 0 0 1px lightgray;
       }
-
       header {
         background: white;
         color: $main-color;
@@ -172,16 +171,15 @@
         margin: 0 118px;
         height: 100px;
         text-align: center;
-        p:first-of-type{
-          margin-top: 10px;
-          font-size: 3.2rem;
-          color: grey;
-        }
-        p:last-of-type {
-          font-size: 1rem;
-          color: grey;
-        }
-
+          p:first-of-type{
+            margin-top: 10px;
+            font-size: 3.2rem;
+            color: grey;
+          }
+          p:last-of-type {
+            font-size: 1rem;
+            color: grey;
+          }
       }
       .text {
         margin: 20px 0;
@@ -204,9 +202,9 @@
     }
     .col:nth-of-type(2) {
         background-color: $main-color;
-      &::before {
-        background-color: $main-color;
-      }
+        &::before {
+          background-color: $main-color;
+        }
         header {
           color: white;
           background-color: $main-color;
@@ -224,8 +222,5 @@
           @include btnPrimary(white, $main-color);
         }
     }
-
   }
-
-
 }
