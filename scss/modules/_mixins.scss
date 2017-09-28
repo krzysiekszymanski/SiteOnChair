@@ -1,12 +1,13 @@
 @mixin btnPrimary($color, $font-color) {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   margin: 20px 0;
   background: $color;
-  padding: 20px 40px;
+  padding: 10px 40px;
   text-decoration: none;
   color: $font-color;
   text-align: center;
   display: inline-block;
   border-radius: 10px;
+  text-transform: uppercase;
 }
