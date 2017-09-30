@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
     btnPrev.addEventListener('click', function(){
-        if( counter==0 ) {
+        if( counter===0 ) {
             tabLi[counter].classList.remove( 'visible' );
             counter=tabLi.length-1;
             tabLi[counter].classList.add( 'visible' );
@@ -40,27 +40,24 @@ document.addEventListener('DOMContentLoaded', function(){
     var basket = document.querySelector('.summary_panel');
     var listProduct = basket.querySelector('.panel_left');
     var priceProduct = basket.querySelector('.panel_right');
-
     var nameProduct = listProduct.querySelector('.title');
     var priceName = priceProduct.querySelector('.title_value');
-
     var colorProduct = listProduct.querySelector('.color');
     var priceColor = priceProduct.querySelector('.color_value');
-
     var patternProduct = listProduct.querySelector('.pattern');
     var pricePattern = priceProduct.querySelector('.pattern_value');
     var sumArr = [];
+    var wholeSum = document.querySelector('.sum');
 
 
     input.forEach(function (element) {
         element.addEventListener('click', function () {
-
+            // wlasciwosc togle zeby był drop down
             var dropMenu = element.querySelector('.list_panel');
             dropMenu.classList.toggle('activeMenu');
+            // wybor konkretnego elemntu
 
-
-            var listProducts = Array.from(element.querySelectorAll('.list_panel li'));
-
+            var listProducts = element.querySelectorAll('.activeMenu li');
                 listProducts.forEach(function (t) {
                     t.addEventListener('click', function () {
                         var select = this.innerText;
@@ -69,44 +66,62 @@ document.addEventListener('DOMContentLoaded', function(){
 
                         if ( activeList === dropMenuArr[0]) {
                              nameProduct.innerHTML='krzesło typu'+select;
-                                if (select == 'Clair') {
+                                if (select === 'Clair') {
                                     priceName.innerHTML = '100pln';
-                                    sumArr.push(100);
-                                } else if (select == 'Margarita') {
+                                    sumArr.splice(0, 1, 100);
+                                    return
+                                } else if (select === 'Margarita') {
                                     priceName.innerHTML = '150pln';
-                                    sumArr.push(150);
+                                    sumArr.splice(0, 1, 150);
+                                    return
                                 } else {
                                     priceName.innerHTML = '170pln';
-                                    sumArr.push(170);
+                                    sumArr.splice(0, 1, 170);
+                                    return
                                 }
+                        return;
                         } else if (activeList === dropMenuArr[1]){
                              colorProduct.innerHTML=select;
-                                if (select == 'Czerwony') {
+                                if (select === 'Czerwony') {
                                     priceColor.innerHTML = '50pln';
-                                    sumArr.push(50);
-                                } else if (select == 'Czarny') {
+                                    sumArr.splice(1, 1, 50);
+                                    return
+                                } else if (select === 'Czarny') {
                                     priceColor.innerHTML = '100pln';
-                                    sumArr.push(100);
+                                    sumArr.splice(1, 1, 100);
+                                    return
                                 } else {
                                     priceColor.innerHTML = '30pln';
-                                    sumArr.push(30);
+                                    sumArr.splice(1, 1, 30);
+                                    return
                                 }
+                        return;
                         } else {
-                             patternProduct.innerHTML=select;
-                            if (select == 'Tkanina') {
-                                pricePattern.innerHTML = '150pln';
-                                sumArr.push(150);
-                            } else {
-                                pricePattern.innerHTML = '300pln';
-                                sumArr.push(300);
-                                console.log(sumArr);
-                            }
-                        }
-                    })
-                })
-        })
-    });
+                                 patternProduct.innerHTML=select;
+                                if (select === 'Tkanina') {
+                                    pricePattern.innerHTML = '150pln';
+                                    sumArr.splice(2, 1, 150);
+                                    return
+                                } else {
+                                    pricePattern.innerHTML = '300pln';
+                                    sumArr.splice(2, 1, 300);
+                                    return
+                                }
+                        return;
+                        };
 
+
+                    });
+
+                });
+            var wholePrice = 0;
+                sumArr.forEach(function (t2) {
+                wholePrice +=t2;
+                wholeSum.innerHTML = wholePrice;
+            })
+            });
+
+    });
 
 
 
