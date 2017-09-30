@@ -127,7 +127,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  width:100%;
+  width:420px;
   height:195px;
   padding:10px;
   margin-top: 50px;
@@ -169,19 +169,26 @@
   height: 135px;
 }
 
-.panel_left h4 , .panel_right h4{
+.panel_left h4 {
   color: #24baa0;
   font-size: 23px;
+  width: 250px;
+}
+.panel_right h4 {
+  color: #24baa0;
+  font-size: 23px;
+  width: 50px;
 }
 
 .panel_left span{
   margin-top:10px;
   font-size: 22px;
-  color: #5b5a5a;
+  color: $main-color;
   display: block;
 }
 
 .panel_right span {
+  float: left;
   display: block;
   font-size: 22px;
   color: #24baa0;

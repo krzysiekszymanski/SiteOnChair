@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', function(){
     var priceColor = priceProduct.querySelector('.color_value');
     var patternProduct = listProduct.querySelector('.pattern');
     var pricePattern = priceProduct.querySelector('.pattern_value');
+    var transportProduct = listProduct.querySelector('.transport');
+    var priceTransport = priceProduct.querySelector('.transport_value');
     var sumArr = [];
     var wholeSum = document.querySelector('.sum');
 
@@ -65,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         var activeList = document.querySelector('.activeMenu');
 
                         if ( activeList === dropMenuArr[0]) {
-                             nameProduct.innerHTML='krzesło typu'+select;
+                             nameProduct.innerHTML='krzesło typu: ' +select;
                                 if (select === 'Clair') {
                                     priceName.innerHTML = '100pln';
                                     sumArr.splice(0, 1, 100);
@@ -114,20 +116,35 @@ document.addEventListener('DOMContentLoaded', function(){
                     });
 
                 });
-            var wholePrice = 0;
-                sumArr.forEach(function (t2) {
-                wholePrice +=t2;
-                wholeSum.innerHTML = wholePrice;
-            })
+            counting();
             });
 
     });
+    // funkcja do zliczania koszyka
+    function counting() {
+        var wholePrice = 0;
+            sumArr.forEach(function (t2) {
+            wholePrice +=t2;
+            wholeSum.innerHTML = wholePrice;});
+    }
 
+var transportChecker = document.getElementById('transport');
 
-
-
-
-
+    transportChecker.addEventListener('change', function () {
+        if (transportChecker.checked) {
+            transportProduct.innerHTML = 'transport';
+            priceTransport.innerHTML = '100 PLN';
+            sumArr.push(100);
+            counting();
+            return
+        } else {
+            transportProduct.innerHTML = '';
+            priceTransport.innerHTML = '';
+            sumArr.splice(3, 1, 0);
+            counting();
+            return
+        }
+    })
 
 
 
