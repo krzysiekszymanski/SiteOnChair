@@ -59,9 +59,11 @@ document.addEventListener('DOMContentLoaded', function(){
             dropMenu.classList.toggle('activeMenu');
             // wybor konkretnego elemntu
 
+
             var listProducts = element.querySelectorAll('.activeMenu li');
-                listProducts.forEach(function (t) {
-                    t.addEventListener('click', function () {
+                listProducts.forEach(function (ele) {
+                    ele.removeAttribute('price', '');// usuwanie datasetu gdyby uzytkownik zdecydował sie na zmiany
+                    ele.addEventListener('click', function () {
                         var select = this.innerText;
                         var dropMenuArr = Array.from(document.querySelectorAll('.list_panel'));
                         var activeList = document.querySelector('.activeMenu');
@@ -70,44 +72,44 @@ document.addEventListener('DOMContentLoaded', function(){
                              nameProduct.innerHTML='krzesło typu: ' +select;
                                 if (select === 'Clair') {
                                     priceName.innerHTML = '100pln';
-                                    sumArr.splice(0, 1, 100);
-                                    return
+                                    this.setAttribute('price', '100');
+                                    return;
                                 } else if (select === 'Margarita') {
                                     priceName.innerHTML = '150pln';
-                                    sumArr.splice(0, 1, 150);
-                                    return
+                                    this.setAttribute('price', '150');
+                                    return;
                                 } else {
                                     priceName.innerHTML = '170pln';
-                                    sumArr.splice(0, 1, 170);
-                                    return
+                                    this.setAttribute('price', '170');
+                                    return;
                                 }
                         return;
                         } else if (activeList === dropMenuArr[1]){
                              colorProduct.innerHTML=select;
                                 if (select === 'Czerwony') {
                                     priceColor.innerHTML = '50pln';
-                                    sumArr.splice(1, 1, 50);
-                                    return
+                                    this.setAttribute('price', '50');
+                                    return;
                                 } else if (select === 'Czarny') {
                                     priceColor.innerHTML = '100pln';
-                                    sumArr.splice(1, 1, 100);
-                                    return
+                                    this.setAttribute('price', '50');
+                                    return;
                                 } else {
                                     priceColor.innerHTML = '30pln';
-                                    sumArr.splice(1, 1, 30);
-                                    return
+                                    this.setAttribute('price', '30');
+                                    return;
                                 }
                         return;
                         } else {
                                  patternProduct.innerHTML=select;
                                 if (select === 'Tkanina') {
                                     pricePattern.innerHTML = '150pln';
-                                    sumArr.splice(2, 1, 150);
-                                    return
+                                    this.setAttribute('price', '150');
+                                    return;
                                 } else {
                                     pricePattern.innerHTML = '300pln';
-                                    sumArr.splice(2, 1, 300);
-                                    return
+                                    this.setAttribute('price', '300');
+                                    return;
                                 }
                         return;
                         };
@@ -116,17 +118,28 @@ document.addEventListener('DOMContentLoaded', function(){
                     });
 
                 });
-            counting();
+              counting();
             });
 
     });
     // funkcja do zliczania koszyka
+
     function counting() {
         var wholePrice = 0;
-            sumArr.forEach(function (t2) {
-            wholePrice +=t2;
-            wholeSum.innerHTML = wholePrice;});
+        var dateSetArr = document.querySelectorAll('.application .form li');
+        dateSetArr.forEach(function (t) {
+            if (t.getAttribute('price') !== null){
+                wholePrice+=parseInt(t.getAttribute('price'));
+                wholePrice+=
+            }
+            wholeSum.innerHTML = wholePrice;
+            return
+        });
     }
+
+
+
+
 
 var transportChecker = document.getElementById('transport');
 
@@ -134,13 +147,11 @@ var transportChecker = document.getElementById('transport');
         if (transportChecker.checked) {
             transportProduct.innerHTML = 'transport';
             priceTransport.innerHTML = '100 PLN';
-            sumArr.push(100);
             counting();
             return
         } else {
             transportProduct.innerHTML = '';
             priceTransport.innerHTML = '';
-            sumArr.splice(3, 1, 0);
             counting();
             return
         }
