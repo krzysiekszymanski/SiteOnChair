@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function(){
     var pricePattern = priceProduct.querySelector('.pattern_value');
     var transportProduct = listProduct.querySelector('.transport');
     var priceTransport = priceProduct.querySelector('.transport_value');
-    var sumArr = [];
     var wholeSum = document.querySelector('.sum');
 
 
@@ -62,8 +61,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
             var listProducts = element.querySelectorAll('.activeMenu li');
                 listProducts.forEach(function (ele) {
-                    ele.removeAttribute('price', '');// usuwanie datasetu gdyby uzytkownik zdecydował sie na zmiany
+                         ele.removeAttribute('price', '');
+
                     ele.addEventListener('click', function () {
+
                         var select = this.innerText;
                         var dropMenuArr = Array.from(document.querySelectorAll('.list_panel'));
                         var activeList = document.querySelector('.activeMenu');
@@ -130,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function(){
         dateSetArr.forEach(function (t) {
             if (t.getAttribute('price') !== null){
                 wholePrice+=parseInt(t.getAttribute('price'));
-                wholePrice+=
             }
             wholeSum.innerHTML = wholePrice;
             return
